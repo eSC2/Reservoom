@@ -19,9 +19,9 @@ namespace Reservoom.Models
             _reservationBook = new ReservationBook();
         }
 
-        public IEnumerable<Reservation> GetReservationsForUser(string username)
+        public IEnumerable<Reservation> GetReservations()
         {
-            return _reservationBook.GetReservationsForUser(username);
+            return _reservationBook.GetAllReservations();
         }
 
         public void MakeReservation(Reservation reservation)

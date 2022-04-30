@@ -29,9 +29,9 @@ namespace Reservoom
 
             }
 
-           
 
-            IEnumerable<Reservation> myReservations = hotel.GetReservationsForUser("eSC2");
+
+            IEnumerable<Reservation> myReservations = hotel.GetReservations();
 
             base.OnStartup(e);
         }
