@@ -19,16 +19,10 @@
             </Grid.ColumnDefinitions>
 
             <TextBlock Grid.Column="0" Text="View Reservations" Style="{StaticResource Header}"/>
-            <Button Grid.Column="1" Margin="10 0 0 0" Content="Make Reservation"/>
+            <Button Grid.Column="1" Margin="10 0 0 0" Content="Make Reservation" Command="{Binding MakeReservationCommand}"/>
         </Grid>
 
-        <ListView Grid.Row="1" Margin="0 25 0 0">
-            
-            <ListViewItem/>
-            <ListViewItem/>
-            <ListViewItem/>
-            <ListViewItem/>
-
+        <ListView Grid.Row="1" Margin="0 25 0 0" ItemsSource="{Binding Reservations}">
             <ListView.ItemContainerStyle>
                 <Style TargetType="ListViewItem">
                     <Setter Property="HorizontalContentAlignment" Value="Stretch"/>
@@ -37,34 +31,38 @@
             
             <ListView.View>
                 <GridView>
-                    <GridViewColumn Header="Room ID" Width="70">
+                    <!--Room ID-->
+                    <GridViewColumn Header="Room ID">
                         <GridViewColumn.CellTemplate>
                             <DataTemplate>
-                                <TextBlock Text="12" HorizontalAlignment="Center" />
+                                <TextBlock Text="{Binding RoomID}" HorizontalAlignment="Center" />
                             </DataTemplate>
                         </GridViewColumn.CellTemplate>
                     </GridViewColumn>
                     
-                    <GridViewColumn Header="Username" Width="80">
+                    <!--Username-->
+                    <GridViewColumn Header="Username">
                         <GridViewColumn.CellTemplate>
                             <DataTemplate>
-                                <TextBlock Text="eSC2" HorizontalAlignment="Center"/>
+                                <TextBlock Text="{Binding Username}" HorizontalAlignment="Center"/>
                             </DataTemplate>
                         </GridViewColumn.CellTemplate>
                     </GridViewColumn>
 
-                    <GridViewColumn Header="Start Time" Width="80">
+                    <!--Start Date-->
+                    <GridViewColumn Header="Start Date">
                         <GridViewColumn.CellTemplate>
                             <DataTemplate>
-                                <TextBlock Text="2022-4-13" HorizontalAlignment="Center"/>
+                                <TextBlock Text="{Binding StartDate}" HorizontalAlignment="Center"/>
                             </DataTemplate>
                         </GridViewColumn.CellTemplate>
                     </GridViewColumn>
 
-                    <GridViewColumn Header="End Time" Width="80">
+                    <!--End Date-->
+                    <GridViewColumn Header="End Date">
                         <GridViewColumn.CellTemplate>
                             <DataTemplate>
-                                <TextBlock Text="2022-4-20" HorizontalAlignment="Center"/>
+                                <TextBlock Text="{Binding EndDate}" HorizontalAlignment="Center"/>
                             </DataTemplate>
                         </GridViewColumn.CellTemplate>
                     </GridViewColumn>
