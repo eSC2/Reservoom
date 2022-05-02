@@ -19,7 +19,7 @@ namespace Reservoom.Models
             _reservationBook = new ReservationBook();
         }
 
-        public IEnumerable<Reservation> GetReservations()
+        public IEnumerable<Reservation> GetAllReservations()
         {
             return _reservationBook.GetAllReservations();
         }
