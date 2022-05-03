@@ -12,21 +12,20 @@ namespace Reservoom.Models
 
         public string Name { get; }
 
-        public Hotel(string name)
+        public Hotel(string name, ReservationBook reservationBook)
         {
             Name = name;
-
-            _reservationBook = new ReservationBook();
+            _reservationBook = reservationBook;
         }
 
-        public IEnumerable<Reservation> GetAllReservations()
+        public async Task<IEnumerable<Reservation>> GetAllReservations()
         {
-            return _reservationBook.GetAllReservations();
+            return await _reservationBook.GetAllReservations();
         }
 
-        public void MakeReservation(Reservation reservation)
+        public async Task MakeReservation(Reservation reservation)
         {
-            _reservationBook.AddReservation(reservation);
+            await _reservationBook.AddReservation(reservation);
         }
     }
 }
